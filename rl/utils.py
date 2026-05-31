@@ -170,8 +170,17 @@ def moving_average(values: List[float], window: int = 100) -> np.ndarray:
 
 def plot_scores(scores: List[float], window: int = 100, title: str = "Training",
                 save_path: Optional[str] = None, show: bool = False):
-    """Plot raw episode scores plus a moving average. Saves a PNG if requested."""
-    import matplotlib
+    """Plot raw episode scores plus a moving average. Saves a PNG if requested.
+
+    Degrades gracefully: if matplotlib isn't installed, prints a hint and
+    returns ``None`` rather than crashing a finished training run.
+    """
+    try:
+        import matplotlib
+    except ImportError:
+        print("[plot_scores] matplotlib not installed - skipping plot "
+              "(pip install matplotlib).")
+        return None
 
     if save_path and not show:
         matplotlib.use("Agg")  # headless-safe

@@ -8,8 +8,13 @@ Examples
 from __future__ import annotations
 
 import argparse
+import os
+import sys
 
 import numpy as np
+
+# Allow running as `python scripts/play.py` without installing the package.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from rl.envs import env_dims, make_env
 from rl.train import build_agent
