@@ -1,2 +1,17 @@
+# Core curriculum dependencies (modules 00-06).
+# Tested with Python 3.10-3.11. For GPU training on Colab, torch is preinstalled.
+gymnasium[box2d]>=0.29,<1.1   # environments (LunarLander needs the box2d extra)
+torch>=2.1                    # neural networks / autograd
+numpy>=1.24
+matplotlib>=3.7               # score plots
+imageio>=2.31                 # saving gameplay GIFs / videos
+tqdm>=4.65                    # progress bars in notebooks
 
-gym~=0.26.1
+# --- Optional, used by specific modules (install as needed) ---
+# stable-baselines3>=2.2      # reference implementations to compare against
+# tensorboard>=2.15           # richer logging
+# swig                        # build dependency some platforms need for box2d
+#
+# Module 07 (VLA) extras - heavy, install only when you reach it:
+# transformers>=4.40          # vision-language backbones
+# pillow                      # image handling
