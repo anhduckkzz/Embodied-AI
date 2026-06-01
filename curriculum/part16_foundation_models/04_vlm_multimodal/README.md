@@ -1,7 +1,10 @@
 # Module 16.4 - Vision-Language Models: unifying the two modalities
 
-Code: [`dl/multimodal.py`](../../../dl/multimodal.py). Demo:
-[`build_clip.py`](build_clip.py).
+Code: [`dl/multimodal.py`](../../../dl/multimodal.py),
+[`dl/clip.py`](../../../dl/clip.py). Demos: [`build_clip.py`](build_clip.py)
+(contrastive alignment) and [`clip_zeroshot.py`](clip_zeroshot.py) (zero-shot
+classification). A focused three-perspective treatment of CLIP (mechanism,
+framework, real system) is in [`clip.md`](clip.md).
 
 This module is the answer to your question: to understand a VLA you must
 understand a VLM, and to understand a VLM you must understand how a vision model

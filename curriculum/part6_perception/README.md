@@ -32,6 +32,15 @@ Tasks, in increasing detail:
 🅰️ Train detectors/segmenters on the A100; run inference (YOLO) in real time on
 the 4060.
 
+### Segmentation foundation models: SAM, SAM 2, SAM 3
+Promptable, open-vocabulary segmentation deserves its own treatment. A dedicated
+lesson covers the whole family from three angles, with a from-scratch model you
+can train, a guide to the real checkpoints, and an open-vocabulary application:
+- Lesson and mechanism: [`segment_anything.md`](segment_anything.md), runnable
+  [`build_minisam.py`](build_minisam.py) (code: [`dl/segmentation.py`](../../dl/segmentation.py)).
+- Framework: [`sam_framework_guide.md`](sam_framework_guide.md).
+- Application (SAM + CLIP): [`applications/open_vocab_segmentation/`](../../applications/open_vocab_segmentation/).
+
 ## 2. Depth & 3D from images
 
 - **Monocular depth estimation** — predict per-pixel depth from one image

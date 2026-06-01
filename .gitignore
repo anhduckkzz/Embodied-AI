@@ -20,5 +20,6 @@ dist/
 /video/*.mp4
 /video/*.meta.json
 
-# Generated demo plots (each curriculum *_demo.py regenerates its own PNG)
+# Generated demo plots (each curriculum *_demo.py / build_*.py regenerates its own PNG)
 curriculum/**/*_demo.png
+curriculum/**/build_*.png
