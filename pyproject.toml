@@ -32,7 +32,7 @@ dev = ["pytest>=7.4"]
 rl-train = "rl.train:main"
 
 [tool.setuptools]
-packages = ["rl", "rl.agents", "robotics"]
+packages = ["rl", "rl.agents", "robotics", "dl"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

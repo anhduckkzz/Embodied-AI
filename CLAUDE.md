@@ -9,13 +9,17 @@ navigation, manipulation, Vision-Language-Action (VLA) models, and applications
 - `rl/` — importable RL library. Agents in `rl/agents/`, shared parts in
   `networks.py`, `buffers.py`, `envs.py`, `utils.py`. Unified trainer in `rl/train.py`.
 - `robotics/` — importable NumPy robotics library: `transforms.py` (SO3/SE3/quat),
-  `kinematics.py` (DH/FK/IK/Jacobian), `control.py` (PID), `filters.py` (KF/EKF),
+  `kinematics.py` (DH/FK/IK/Jacobian), `control.py` (PID/LQR), `filters.py` (KF/EKF),
   `planning.py` (A*/Dijkstra/RRT), `pointcloud.py` (voxel/RANSAC/ICP), `sensors.py`.
+- `dl/` — importable PyTorch deep-learning architecture library (read-and-run):
+  `attention.py`, `transformer.py` (GPT), `tokenizer.py`, `vision.py` (CNN/ViT),
+  `multimodal.py` (CLIP/cross-attention). Backs Part 16 (foundation models).
 - `curriculum/partN_*/` — numbered lessons (11 parts). Each part has a `README.md`
   (theory) and many have runnable `*_demo.py` scripts and/or `notebook.ipynb`.
   Part 4 also has setup guides (MuJoCo/Isaac/ROS) as `*_guide.md`.
 - `scripts/` — `play.py` / `record.py` entry points.
-- `tests/` — `pytest` sanity checks (`test_core.py` for rl, `test_robotics.py`).
+- `tests/` — `pytest` sanity checks: `test_core.py` + `test_rl_classical.py` (rl),
+  `test_robotics.py` (robotics), `test_dl.py` (dl architectures).
 - `tools/build_notebooks.py` — regenerates the Part-1 Colab notebooks.
 
 ## Conventions

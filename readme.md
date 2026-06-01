@@ -24,11 +24,14 @@ Three layers — learn by **reading**, **running**, and **building**:
 1. 📖 **Theory lessons** — `curriculum/part*/README.md`, written from zero
    (intuition → physics/math → how real systems use it), each with a **Project**,
    **"Check your understanding"**, and **"Go deeper"** references.
-2. 🧪 **Two runnable libraries** you can read end-to-end:
+2. 🧪 **Three runnable libraries** you can read end-to-end:
    - [`rl/`](rl/) — reinforcement learning (tabular → DQN → PPO/SAC → bandits,
      dynamic programming, Dyna model-based, behavioral cloning).
    - [`robotics/`](robotics/) — transforms, kinematics, **PID & LQR control**,
      Kalman/EKF, SLAM blocks, planning (A*/RRT), point clouds, sensor models.
+   - [`dl/`](dl/) — the model architecture stack from scratch: attention,
+     transformers, a small GPT, CNN/ViT, and CLIP-style multimodal fusion. This
+     is the foundation for understanding VLMs and VLAs (Part 16).
 3. 📓 **Demos, notebooks & setup guides** — runnable `*_demo.py` in many parts,
    Colab notebooks (Part 1), and setup guides for the heavy tools (MuJoCo, Isaac,
    ROS 2).
@@ -90,7 +93,7 @@ Isaac Lab RL). With 8 GB VRAM, use 4-bit/LoRA/gradient-checkpointing for big mod
 **Synthesis**
 | Part | Topic | Code |
 |------|-------|------|
-| [16](curriculum/part16_foundation_models/) | **Foundation models** (transformers, diffusion, multimodal, LoRA) | — |
+| [16](curriculum/part16_foundation_models/) | **Foundation models** (attention→transformer→vision/language→VLM, diffusion, LoRA) | [`dl/`](dl/) |
 | [10](curriculum/part10_vla_models/) | **Vision-Language-Action models** | [`vla_minidemo.py`](curriculum/part1_reinforcement_learning/07_vla_robotics/vla_minidemo.py) |
 | [11](curriculum/part11_applications/) | Applications: autonomous driving, drones, humanoids | — |
 
@@ -142,7 +145,16 @@ from robotics.control import PID, lqr_gain                     # control
 from robotics.filters import ExtendedKalmanFilter              # estimation/SLAM
 from robotics.planning import astar, RRT                       # planning
 from robotics.pointcloud import fit_plane_ransac, icp          # LiDAR
+
+# dl/ — the model architecture stack from scratch (PyTorch)
+from dl.attention import MultiHeadAttention                    # the core mechanism
+from dl.transformer import GPT                                 # a small language model
+from dl.vision import ViT                                      # a vision transformer
+from dl.multimodal import clip_contrastive_loss, CrossAttentionFusion  # VLM fusion
 ```
+
+Application-layer guides: [CARLA for driving](curriculum/part11_applications/carla_guide.md)
+and [LeRobot for robot policies/VLAs](curriculum/part9_manipulation_teleop/lerobot_guide.md).
 
 Runnable demos (CPU, no heavy deps): `mujoco_demo.py`, `perception_demo.py`,
 `ekf_localization_demo.py`, `planning_demo.py`, `manipulation_demo.py`,

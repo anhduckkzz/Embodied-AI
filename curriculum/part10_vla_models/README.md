@@ -7,6 +7,14 @@
 > [`../part1_reinforcement_learning/07_vla_robotics/vla_minidemo.py`](../part1_reinforcement_learning/07_vla_robotics/vla_minidemo.py);
 > this part is the full, current picture and a path to real models on your A100.
 
+> Prerequisite for real understanding: work through
+> [Part 16 - Foundation Models](../part16_foundation_models/) first. A VLA is a
+> three-modality model; to understand it you must understand the transformer
+> (16.1), language models (16.2), vision models (16.3), and how vision and
+> language are unified into a VLM (16.4), plus the action heads (16.5). Then this
+> part reads as "a VLM with an action head." To train one in practice, see the
+> [LeRobot guide](../part9_manipulation_teleop/lerobot_guide.md).
+
 ---
 
 ## 1. What a VLA is, precisely
