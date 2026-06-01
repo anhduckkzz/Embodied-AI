@@ -48,6 +48,32 @@ class PID:
         return float(np.clip(u, *self.output_limits))
 
 
+def lqr_gain(A: np.ndarray, B: np.ndarray, Q: np.ndarray, R: np.ndarray,
+             iters: int = 1000, tol: float = 1e-9) -> np.ndarray:
+    """Infinite-horizon discrete LQR gain K for the system x_{k+1}=A x + B u.
+
+    LQR is the *optimal* controller for a linear system under a quadratic cost
+    ``sum x'Q x + u'R u`` - the principled step up from hand-tuned PID, and the
+    backbone of MPC (which re-solves a finite-horizon version each step).
+
+    Solves the discrete algebraic Riccati equation by iteration, then returns
+    the state-feedback gain so the optimal control is ``u = -K x``.
+    """
+    A, B = np.atleast_2d(A).astype(float), np.atleast_2d(B).astype(float)
+    Q, R = np.atleast_2d(Q).astype(float), np.atleast_2d(R).astype(float)
+    P = Q.copy()
+    for _ in range(iters):
+        BtP = B.T @ P
+        K = np.linalg.solve(R + BtP @ B, BtP @ A)        # (R+B'PB)^-1 B'PA
+        P_new = Q + A.T @ P @ A - A.T @ P @ B @ K
+        if np.max(np.abs(P_new - P)) < tol:
+            P = P_new
+            break
+        P = P_new
+    BtP = B.T @ P
+    return np.linalg.solve(R + BtP @ B, BtP @ A)
+
+
 def simulate_mass_pid(target: float = 1.0, kp: float = 20.0, ki: float = 5.0,
                       kd: float = 8.0, mass: float = 1.0, dt: float = 0.02,
                       steps: int = 500, disturbance: float = 0.0):
