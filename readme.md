@@ -54,7 +54,11 @@ Four layers — learn by **understanding**, **running frameworks**, **integratin
      transformers, a small GPT, CNN/ViT, and CLIP-style multimodal fusion. This
      is the foundation for understanding VLMs and VLAs (Part 16).
 3. **Framework/integration path** — optional-dependency demos and guides show how
-   the same ideas appear in production libraries and APIs.
+   the same ideas appear in production libraries and APIs. The from-scratch
+   libraries above are for learning the mechanisms; application code is built on
+   the real frameworks. See [`applications/vla/`](applications/vla/) for an
+   end-to-end multi-task Vision-Language-Action policy built on PyTorch (it does
+   not import the teaching code): `python -m applications.vla.train`.
 4. **Demos, curated notebooks & setup guides** — runnable `*_demo.py` in many
    parts, beginner-friendly notebooks for curriculum lessons, and setup guides
    for the heavy tools (MuJoCo, Isaac, ROS 2, CARLA, LeRobot).
