@@ -23,14 +23,16 @@ dependencies = [
 [project.optional-dependencies]
 box2d = ["gymnasium[box2d]>=0.29"]
 extras = ["stable-baselines3>=2.2", "tensorboard>=2.15"]
-vla = ["transformers>=4.40", "pillow"]
+sim = ["mujoco>=3.0", "gymnasium[mujoco]>=0.29"]        # Part 4 simulation
+perception = ["open3d>=0.18", "opencv-python>=4.8"]      # Parts 5-7 (production)
+vla = ["transformers>=4.40", "pillow", "lerobot"]        # Part 10
 dev = ["pytest>=7.4"]
 
 [project.scripts]
 rl-train = "rl.train:main"
 
 [tool.setuptools]
-packages = ["rl", "rl.agents"]
+packages = ["rl", "rl.agents", "robotics", "dl"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -14,3 +14,6 @@ __pycache__/
 # Generated media (regenerate with scripts/record.py)
 /video/*.mp4
 /video/*.meta.json
+
+# Generated demo plots (each curriculum *_demo.py regenerates its own PNG)
+curriculum/**/*_demo.png
