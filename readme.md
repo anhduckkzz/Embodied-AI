@@ -1,4 +1,4 @@
-# Embodied AI: Zero → Master 🤖🧠🚗🚁
+# Embodied AI: Zero → Master
 
 > From the Bellman equation to robots, self-driving cars, drones, and humanoid
 > **Vision-Language-Action** models — a complete, hands-on curriculum that assumes
@@ -17,14 +17,14 @@ humanoids).
 
 ---
 
-## 🧭 How to use this repo
+## How to use this repo
 
 Three layers — learn by **reading**, **running**, and **building**:
 
-1. 📖 **Theory lessons** — `curriculum/part*/README.md`, written from zero
+1. **Theory lessons** — `curriculum/part*/README.md`, written from zero
    (intuition → physics/math → how real systems use it), each with a **Project**,
    **"Check your understanding"**, and **"Go deeper"** references.
-2. 🧪 **Three runnable libraries** you can read end-to-end:
+2. **Three runnable libraries** you can read end-to-end:
    - [`rl/`](rl/) — reinforcement learning (tabular → DQN → PPO/SAC → bandits,
      dynamic programming, Dyna model-based, behavioral cloning).
    - [`robotics/`](robotics/) — transforms, kinematics, **PID & LQR control**,
@@ -32,7 +32,7 @@ Three layers — learn by **reading**, **running**, and **building**:
    - [`dl/`](dl/) — the model architecture stack from scratch: attention,
      transformers, a small GPT, CNN/ViT, and CLIP-style multimodal fusion. This
      is the foundation for understanding VLMs and VLAs (Part 16).
-3. 📓 **Demos, notebooks & setup guides** — runnable `*_demo.py` in many parts,
+3. **Demos, notebooks & setup guides** — runnable `*_demo.py` in many parts,
    Colab notebooks (Part 1), and setup guides for the heavy tools (MuJoCo, Isaac,
    ROS 2).
 
@@ -41,15 +41,15 @@ pip install -e ".[box2d,dev]"     # core install
 pytest -q                          # 30 sanity tests across rl/ and robotics/
 ```
 
-### 💻 Your hardware (RTX 4060 8 GB VRAM, 32 GB RAM) + 🅰️ A100 (Colab)
-Lessons tag compute with **💻** (runs on the laptop: MuJoCo, classical
-perception/SLAM/control/planning, small-model RL/VLA, all demos) or **🅰️** (use
+### Your hardware (RTX 4060 8 GB VRAM, 32 GB RAM) + A100 (Colab)
+Lessons tag compute with **laptop** (runs on the laptop: MuJoCo, classical
+perception/SLAM/control/planning, small-model RL/VLA, all demos) or **A100** (use
 the A100: big VLA/LLM fine-tuning, 3D detection, NeRF/3DGS training, large-scale
 Isaac Lab RL). With 8 GB VRAM, use 4-bit/LoRA/gradient-checkpointing for big models.
 
 ---
 
-## 📚 The catalog (18 parts)
+## The catalog (18 parts)
 
 > **Folder numbers are IDs, not a strict order** — follow the **Study Plan** below.
 > Parts 0–11 keep their original numbers; 12–17 were added later but slot into the
@@ -99,7 +99,7 @@ Isaac Lab RL). With 8 GB VRAM, use 4-bit/LoRA/gradient-checkpointing for big mod
 
 ---
 
-## 🎓 The Study Plan (recommended order)
+## The Study Plan (recommended order)
 
 ```
  0 Foundations
@@ -114,21 +114,21 @@ Isaac Lab RL). With 8 GB VRAM, use 4-bit/LoRA/gradient-checkpointing for big mod
    │
  8 Navigation & Planning ─► 9 Manipulation & Teleop ─► 17 Legged Locomotion
    │
- 16 Foundation Models ─► 10 VLA Models ─► 11 Applications  🎉
+ 16 Foundation Models ─► 10 VLA Models ─► 11 Applications
 ```
 
 A realistic pace from zero is **one part per 1–2 weeks**.
 
 ### Goal-based tracks (don't have to do everything in order)
-- **🎯 VLA / robot foundation models (your goal):** 0 → 1 → 12 → 3 → 4 → 5 → 6 → 9 → 16 → 10.
-- **🚗 Self-driving cars:** 0 → 3 → 5 → 6 → 15 → 7 → 8 → 14 → 11(driving).
-- **🚁 Drones/UAVs:** 0 → 2 → 3 → 14 → 5 → 7 → 8 → 11(drones).
-- **🦿 Humanoids/legged:** 0 → 1 → 2 → 3 → 14 → 4 → 17.
-- **🧠 RL mastery (theory-deep):** 0 → all of Part 1 (00→15) → 12 → 14.
+- **VLA / robot foundation models (your goal):** 0 → 1 → 12 → 3 → 4 → 5 → 6 → 9 → 16 → 10.
+- **Self-driving cars:** 0 → 3 → 5 → 6 → 15 → 7 → 8 → 14 → 11(driving).
+- **Drones/UAVs:** 0 → 2 → 3 → 14 → 5 → 7 → 8 → 11(drones).
+- **Humanoids/legged:** 0 → 1 → 2 → 3 → 14 → 4 → 17.
+- **RL mastery (theory-deep):** 0 → all of Part 1 (00→15) → 12 → 14.
 
 ---
 
-## 🧱 The code, at a glance
+## The code, at a glance
 
 ```python
 # rl/ — reinforcement learning
@@ -162,7 +162,7 @@ Runnable demos (CPU, no heavy deps): `mujoco_demo.py`, `perception_demo.py`,
 
 ---
 
-## 📖 Foundational references (all free)
+## Foundational references (all free)
 - **RL:** Sutton & Barto, *Reinforcement Learning*; OpenAI Spinning Up.
 - **Robotics:** Lynch & Park, *Modern Robotics*; Thrun et al., *Probabilistic Robotics*; Tedrake, *Underactuated Robotics*.
 - **Vision/3D:** Szeliski, *Computer Vision*; Hartley & Zisserman, *Multiple View Geometry*.
