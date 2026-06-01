@@ -17,9 +17,30 @@ humanoids).
 
 ---
 
+## Learning philosophy: mechanisms → frameworks → real systems
+
+This is a personal learning repo for building embodied AI intuition **and**
+practical fluency. Each topic should be studied in three passes:
+
+1. **Mechanisms first** — read the math and the from-scratch implementation so
+   the core idea is visible instead of hidden behind an API.
+2. **Frameworks second** — run the same idea with the standard library,
+   framework, or service used in practice (PyTorch, Gymnasium/SB3, MuJoCo,
+   ROS 2, Open3D, CARLA, LeRobot, Hugging Face, etc.).
+3. **Real systems third** — connect the piece into an embodied stack: sensors →
+   perception → state estimation → planning/control → learning policy → robot,
+   car, drone, or VLA application.
+
+The goal is not just to collect algorithms. The goal is to build a clear path
+from fundamentals to your niche applications: robotics, autonomous driving,
+drones, manipulation, and Vision-Language-Action systems. See
+[`learning_path.md`](learning_path.md) for the full map.
+
+---
+
 ## How to use this repo
 
-Three layers — learn by **reading**, **running**, and **building**:
+Four layers — learn by **understanding**, **running frameworks**, **integrating systems**, and **building**:
 
 1. **Theory lessons** — `curriculum/part*/README.md`, written from zero
    (intuition → physics/math → how real systems use it), each with a **Project**,
@@ -32,13 +53,15 @@ Three layers — learn by **reading**, **running**, and **building**:
    - [`dl/`](dl/) — the model architecture stack from scratch: attention,
      transformers, a small GPT, CNN/ViT, and CLIP-style multimodal fusion. This
      is the foundation for understanding VLMs and VLAs (Part 16).
-3. **Demos, notebooks & setup guides** — runnable `*_demo.py` in many parts,
-   Colab notebooks (Part 1), and setup guides for the heavy tools (MuJoCo, Isaac,
-   ROS 2).
+3. **Framework/integration path** — optional-dependency demos and guides show how
+   the same ideas appear in production libraries and APIs.
+4. **Demos, curated notebooks & setup guides** — runnable `*_demo.py` in many
+   parts, beginner-friendly notebooks for curriculum lessons, and setup guides
+   for the heavy tools (MuJoCo, Isaac, ROS 2, CARLA, LeRobot).
 
 ```bash
 pip install -e ".[box2d,dev]"     # core install
-pytest -q                          # 30 sanity tests across rl/ and robotics/
+pytest -q                          # sanity tests across rl/, robotics/, and dl/
 ```
 
 ### Your hardware (RTX 4060 8 GB VRAM, 32 GB RAM) + A100 (Colab)
@@ -159,6 +182,13 @@ and [LeRobot for robot policies/VLAs](curriculum/part9_manipulation_teleop/lerob
 Runnable demos (CPU, no heavy deps): `mujoco_demo.py`, `perception_demo.py`,
 `ekf_localization_demo.py`, `planning_demo.py`, `manipulation_demo.py`,
 `control_demo.py`, `vla_minidemo.py`.
+
+Curriculum folders include curated `notebook.ipynb` study workspaces. These are
+intended to be beginner-friendly, detailed, and manually shaped around each
+lesson rather than mechanically generated templates. Use
+[`curriculum/NOTEBOOK_GUIDE.md`](curriculum/NOTEBOOK_GUIDE.md) for the notebook
+quality standard and [`quickstart_tracks.md`](quickstart_tracks.md) for focused
+VLA, driving, drone, and manipulation paths.
 
 ---
 
