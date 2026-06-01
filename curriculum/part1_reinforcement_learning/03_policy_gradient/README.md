@@ -1,6 +1,6 @@
 # Module 03 — Policy gradients: REINFORCE
 
-> Code: [`rl/agents/reinforce.py`](../../rl/agents/reinforce.py) ·
+> Code: [`rl/agents/reinforce.py`](../../../rl/agents/reinforce.py) ·
 > Notebook: `notebook.ipynb` · Envs: CartPole-v1, LunarLander-v3
 
 So far we learned values and acted greedily. Now we **parameterize the policy

@@ -1,7 +1,7 @@
 # Module 05 — Continuous control: DDPG → TD3 → SAC
 
-> Code: [`ddpg.py`](../../rl/agents/ddpg.py), [`td3.py`](../../rl/agents/td3.py),
-> [`sac.py`](../../rl/agents/sac.py) · Notebook: `notebook.ipynb` ·
+> Code: [`ddpg.py`](../../../rl/agents/ddpg.py), [`td3.py`](../../../rl/agents/td3.py),
+> [`sac.py`](../../../rl/agents/sac.py) · Notebook: `notebook.ipynb` ·
 > Envs: LunarLanderContinuous-v3, Pendulum-v1
 
 **This is the robotics core of the curriculum.** Real robots take continuous
@@ -35,7 +35,7 @@ fragile** — sensitive to hyper-parameters and prone to Q-overestimation.
 ## 2. TD3 — three fixes that make it reliable
 
 TD3 keeps DDPG's structure and patches its failure modes (see
-[`td3.py`](../../rl/agents/td3.py)):
+[`td3.py`](../../../rl/agents/td3.py)):
 
 1. **Twin critics + clipped double-Q.** Learn two critics, use the **minimum**
    in the target. Counters overestimation (the continuous analogue of Double DQN).
@@ -60,7 +60,7 @@ J = E[ Σ_t  r_t  +  α · H(π(·|s_t)) ]
 Acting as randomly as possible *while still solving the task* yields policies
 that are robust and explore well. SAC combines this with:
 - a **stochastic, squashed-Gaussian actor** (reparameterized for low-variance
-  gradients; tanh keeps actions bounded — [`SquashedGaussianActor`](../../rl/networks.py)),
+  gradients; tanh keeps actions bounded — [`SquashedGaussianActor`](../../../rl/networks.py)),
 - **twin critics** (from TD3),
 - **automatic temperature tuning** — α is learned to hit a target entropy, so
   there's one fewer knob to tune.

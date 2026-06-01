@@ -1,6 +1,6 @@
 # Module 02 — Value-based deep RL: DQN and friends
 
-> Code: [`rl/agents/dqn.py`](../../rl/agents/dqn.py) ·
+> Code: [`rl/agents/dqn.py`](../../../rl/agents/dqn.py) ·
 > Notebook: `notebook.ipynb` · Env: **LunarLander-v3**
 
 This is the upgrade of the original repo. We replace the table `Q[s,a]` with a
@@ -23,7 +23,7 @@ DQN introduces two fixes, both implemented in `dqn.py`:
 ### Fix 1 — Experience Replay
 Store transitions `(s, a, r, s', done)` in a large **replay buffer** and train
 on **random minibatches**. This breaks correlations and reuses each experience
-many times (sample efficiency). → [`rl/buffers.py: ReplayBuffer`](../../rl/buffers.py)
+many times (sample efficiency). → [`rl/buffers.py: ReplayBuffer`](../../../rl/buffers.py)
 
 ### Fix 2 — Target Network
 Keep a **separate, slowly-updated** copy of the network, `Q(·; θ⁻)`, to compute
@@ -74,11 +74,11 @@ A near-free, strict improvement — it's **on by default** in this repo.
 Split the network into a state-value stream `V(s)` and an advantage stream
 `A(s,a)`, recombined as `Q = V + (A − mean A)`. Helps when many actions have
 similar value (the agent learns "this state is good" without evaluating every
-action). → [`rl/networks.py: DuelingQNetwork`](../../rl/networks.py)
+action). → [`rl/networks.py: DuelingQNetwork`](../../../rl/networks.py)
 
 ### Prioritized Experience Replay (PER) — sample what matters
 Replay surprising transitions (high TD-error) more often, with importance
-weights to correct the bias. → [`rl/buffers.py: PrioritizedReplayBuffer`](../../rl/buffers.py)
+weights to correct the bias. → [`rl/buffers.py: PrioritizedReplayBuffer`](../../../rl/buffers.py)
 
 ## 4. Train it
 

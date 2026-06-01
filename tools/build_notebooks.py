@@ -284,8 +284,9 @@ NOTEBOOKS["07_vla_robotics"] = notebook(
 
 def main():
     here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    base = os.path.join(here, "curriculum", "part1_reinforcement_learning")
     for module, nb in NOTEBOOKS.items():
-        path = os.path.join(here, "curriculum", module, "notebook.ipynb")
+        path = os.path.join(base, module, "notebook.ipynb")
         with open(path, "w") as f:
             json.dump(nb, f, indent=1)
         print(f"wrote {path}")

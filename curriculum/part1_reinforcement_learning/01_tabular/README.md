@@ -1,6 +1,6 @@
 # Module 01 — Tabular methods: Q-learning & SARSA
 
-> Code: [`rl/agents/tabular.py`](../../rl/agents/tabular.py) ·
+> Code: [`rl/agents/tabular.py`](../../../rl/agents/tabular.py) ·
 > Notebook: `notebook.ipynb` · Envs: FrozenLake-v1, CliffWalking-v0, Taxi-v3
 
 This is the module where RL stops being abstract. We store a table
@@ -55,7 +55,7 @@ edge.
 
 **Q-learning vs SARSA in one sentence:** they differ *only* in whether the
 bootstrap uses `max_a' Q` (off-policy) or `Q(s', a')` for the sampled `a'`
-(on-policy). See it in [`tabular.py`](../../rl/agents/tabular.py) — it's a
+(on-policy). See it in [`tabular.py`](../../../rl/agents/tabular.py) — it's a
 single `if`.
 
 ## 4. Exploration: ε-greedy

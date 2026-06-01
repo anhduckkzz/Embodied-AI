@@ -1,7 +1,7 @@
 # Module 04 — Actor-Critic & PPO: the modern default
 
-> Code: [`rl/agents/a2c.py`](../../rl/agents/a2c.py),
-> [`rl/agents/ppo.py`](../../rl/agents/ppo.py) ·
+> Code: [`rl/agents/a2c.py`](../../../rl/agents/a2c.py),
+> [`rl/agents/ppo.py`](../../../rl/agents/ppo.py) ·
 > Notebook: `notebook.ipynb` · Env: LunarLander-v3
 
 This is the most important module for your goal. **PPO** is the workhorse of
@@ -36,7 +36,7 @@ A_t = Σ_{l≥0} (γλ)^l · δ_{t+l}                # exponentially-weighted su
 ```
 
 λ=0 → one-step TD; λ=1 → Monte-Carlo. λ≈0.95 is the sweet spot used everywhere.
-Implemented in [`rl/buffers.py: RolloutBuffer`](../../rl/buffers.py).
+Implemented in [`rl/buffers.py: RolloutBuffer`](../../../rl/buffers.py).
 
 ## 3. A2C — Advantage Actor-Critic
 
@@ -73,7 +73,7 @@ L_CLIP = E[ min( r_t·A_t ,  clip(r_t, 1−ε, 1+ε)·A_t ) ]
 The `min` makes the bound **pessimistic**: it only removes incentive to change,
 never adds it. The result is a method that's nearly as simple as A2C but stable
 enough to run 10 epochs of minibatch SGD per rollout. See
-[`rl/agents/ppo.py`](../../rl/agents/ppo.py) — the clip is four lines.
+[`rl/agents/ppo.py`](../../../rl/agents/ppo.py) — the clip is four lines.
 
 Extras this implementation includes (all standard "PPO tricks"):
 - **Advantage normalization** per batch.

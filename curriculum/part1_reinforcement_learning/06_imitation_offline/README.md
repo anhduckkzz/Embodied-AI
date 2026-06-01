@@ -1,6 +1,6 @@
 # Module 06 — Imitation & offline RL: learning from demonstrations
 
-> Code: [`rl/agents/bc.py`](../../rl/agents/bc.py) ·
+> Code: [`rl/agents/bc.py`](../../../rl/agents/bc.py) ·
 > Notebook: `notebook.ipynb` · Env: LunarLander-v3
 
 The single most important module for understanding today's robot foundation
@@ -33,7 +33,7 @@ loss = -policy.distribution(states).log_prob(expert_actions).sum(-1).mean()
 ```
 
 No environment, no reward, no Bellman equation — just `(x → y)`. In this repo,
-[`collect_demonstrations`](../../rl/agents/bc.py) rolls out a *trained* DQN/SAC
+[`collect_demonstrations`](../../../rl/agents/bc.py) rolls out a *trained* DQN/SAC
 agent as the "expert" so you can clone it and compare.
 
 ```bash
