@@ -13,7 +13,11 @@ navigation, manipulation, Vision-Language-Action (VLA) models, and applications
   `planning.py` (A*/Dijkstra/RRT), `pointcloud.py` (voxel/RANSAC/ICP), `sensors.py`.
 - `dl/` — importable PyTorch deep-learning architecture library (read-and-run):
   `attention.py`, `transformer.py` (GPT), `tokenizer.py`, `vision.py` (CNN/ViT),
-  `multimodal.py` (CLIP/cross-attention). Backs Part 16 (foundation models).
+  `multimodal.py` (cross-attention), `clip.py` (CLIP/zero-shot),
+  `segmentation.py` (MiniSAM promptable segmentation). Backs Part 16.
+- `applications/` — framework-based real systems built on the libraries above but
+  NOT importing the from-scratch teaching code: `vla/` (multi-task VLA),
+  `open_vocab_segmentation/` (SAM + CLIP).
 - `curriculum/partN_*/` — numbered lessons (11 parts). Each part has a `README.md`
   (theory) and many have runnable `*_demo.py` scripts and/or `notebook.ipynb`.
   Part 4 also has setup guides (MuJoCo/Isaac/ROS) as `*_guide.md`.

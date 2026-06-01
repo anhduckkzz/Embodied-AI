@@ -51,14 +51,18 @@ Four layers — learn by **understanding**, **running frameworks**, **integratin
    - [`robotics/`](robotics/) — transforms, kinematics, **PID & LQR control**,
      Kalman/EKF, SLAM blocks, planning (A*/RRT), point clouds, sensor models.
    - [`dl/`](dl/) — the model architecture stack from scratch: attention,
-     transformers, a small GPT, CNN/ViT, and CLIP-style multimodal fusion. This
-     is the foundation for understanding VLMs and VLAs (Part 16).
+     transformers, a small GPT, CNN/ViT, CLIP (zero-shot), and MiniSAM
+     (promptable segmentation). The foundation for understanding VLMs and VLAs
+     (Part 16) and segmentation models (Part 6).
 3. **Framework/integration path** — optional-dependency demos and guides show how
    the same ideas appear in production libraries and APIs. The from-scratch
    libraries above are for learning the mechanisms; application code is built on
-   the real frameworks. See [`applications/vla/`](applications/vla/) for an
-   end-to-end multi-task Vision-Language-Action policy built on PyTorch (it does
-   not import the teaching code): `python -m applications.vla.train`.
+   the real frameworks. See [`applications/`](applications/) for systems built on
+   PyTorch and real libraries (they do not import the teaching code):
+   [`vla/`](applications/vla/) (end-to-end multi-task Vision-Language-Action
+   policy, `python -m applications.vla.train`) and
+   [`open_vocab_segmentation/`](applications/open_vocab_segmentation/) (SAM + CLIP
+   text-prompted segmentation).
 4. **Demos, curated notebooks & setup guides** — runnable `*_demo.py` in many
    parts, beginner-friendly notebooks for curriculum lessons, and setup guides
    for the heavy tools (MuJoCo, Isaac, ROS 2, CARLA, LeRobot).
