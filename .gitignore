@@ -1,2 +1,16 @@
+# IDE / caches
 /.idea
-/__pycache__
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Training artifacts (keep the repo light; models are reproducible)
+/runs/
+*.pt
+# Allow the original committed checkpoint used by legacy/ + docs
+!model/checkpoint.pth
+
+# Generated media (regenerate with scripts/record.py)
+/video/*.mp4
+/video/*.meta.json
