@@ -15,7 +15,7 @@ library; that code is for learning the mechanism, this code uses the framework.
 """
 from __future__ import annotations
 
-from typing import Dict, List, Tuple
+from typing import Dict, List, Optional
 
 import numpy as np
 import torch
@@ -26,12 +26,16 @@ from applications.vla.env import (GRID, IMG, MAX_INSTR_LEN, N_ACTIONS, VOCAB_SIZ
 from applications.vla.model import VLAPolicy
 
 
-def collect_dataset(n_episodes: int = 1200, seed: int = 0) -> Dict[str, np.ndarray]:
-    """Roll out the expert across random multi-task episodes; record (obs, action)."""
+def collect_dataset(n_episodes: int = 1200, seed: int = 0,
+                    task_type: Optional[str] = None) -> Dict[str, np.ndarray]:
+    """Roll out the expert and record (obs, action) pairs.
+
+    ``task_type`` of None mixes both families (the default for a multi-task VLA);
+    pass "color" or "spatial" to restrict to one family."""
     env = MultiTaskVLAEnv(seed=seed)
     images, instrs, proprios, actions = [], [], [], []
     for _ in range(n_episodes):
-        obs = env.reset()
+        obs = env.reset(task_type=task_type)
         for _ in range(2 * GRID + 1):
             a = env.expert_action()
             images.append(obs["image"])
